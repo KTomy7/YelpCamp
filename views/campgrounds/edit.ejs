@@ -1,5 +1,5 @@
 <% layout('layouts/boilerplate') %> 
-<div class="row">
+<div class="row mt-5">
     <h1 class="text-center">Edit Campground</h1>
     <div class="col-6 offset-3">
         <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" class="validated-form" novalidate enctype="multipart/form-data"> 
@@ -43,9 +43,11 @@
                 <% }) %> 
             </div>
             <div class="mb-3 text-center">
-                <button class="btn btn-success">Update Campground</button>
+                <button class="btn btn-lg btn-success">Update Campground</button>
             </div>
         </form>
     </div>
+    <div class="mb-3">
+        <a href="/campgrounds/<%= campground._id %>" class="btn btn-info">Back To Campground</a>
+    </div>
 </div>
-<a href="/campgrounds/<%= campground._id %>">Back To Campground</a>

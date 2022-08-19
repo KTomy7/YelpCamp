@@ -1,6 +1,5 @@
 module.exports = [
     'IMG_1448_th4fak',
-    'v1660905040/YelpCamp/photo-1499553166605-18fe00886aff_w49hvk',
     'photo-1507371341162-763b5e419408_ormtoi',
     'photo-1518602164578-cd0074062767_nhkosk',
     'photo-1501703979959-797917eb21c8_vwxva3',

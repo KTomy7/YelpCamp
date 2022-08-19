@@ -8,7 +8,15 @@ const imageSchema = new Schema({
 });
 
 imageSchema.virtual('thumbnail').get(function() {
-    return this.url.replace('/upload', '/upload/w_200');
+    return this.url.replace('/upload', '/upload/w_200,h_150,c_fill');
+});
+
+imageSchema.virtual('medium').get(function() {
+    return this.url.replace('/upload', '/upload/w_600,h_350,c_fill');
+});
+
+imageSchema.virtual('large').get(function() {
+    return this.url.replace('/upload', '/upload/w_750,h_450,c_fill');
 });
 
 const campgroundSchema = new mongoose.Schema({
