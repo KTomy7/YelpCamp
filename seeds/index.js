@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const cities = require('./cities');
 const { places, descriptors } = require('./seedHelpers');
+const images = require('./images');
 const Campground = require('../models/campground');
 
 mongoose.connect('mongodb://localhost:27017/yelp_camp');
@@ -26,16 +27,16 @@ const seedDB = async () => {
             price: Math.floor(Math.random() * 20) + 10,
             images: [
                 {
-                    url: 'https://res.cloudinary.com/ktomy7/image/upload/v1659721064/YelpCamp/htzc16td1tcnd4t5ca6q.jpg',
-                    filename: 'YelpCamp/htzc16td1tcnd4t5ca6q'
+                    url: `https://res.cloudinary.com/ktomy7/image/upload/v1659721064/YelpCamp/${sampel(images)}.jpg`,
+                    filename: `YelpCamp/${sampel(images)}`
                 },
                 {
-                    url: 'https://res.cloudinary.com/ktomy7/image/upload/v1659721063/YelpCamp/ihqv8rf6lispxkhfpt5r.jpg',
-                    filename: 'YelpCamp/ihqv8rf6lispxkhfpt5r'
+                    url: `https://res.cloudinary.com/ktomy7/image/upload/v1659721064/YelpCamp/${sampel(images)}.jpg`,
+                    filename: `YelpCamp/${sampel(images)}`
                 },
                 {
-                    url: 'https://res.cloudinary.com/ktomy7/image/upload/v1659721189/YelpCamp/r0gbjt7xi9a3xzgjzgsv.jpg',
-                    filename: 'YelpCamp/r0gbjt7xi9a3xzgjzgsv'
+                    url: `https://res.cloudinary.com/ktomy7/image/upload/v1659721064/YelpCamp/${sampel(images)}.jpg`,
+                    filename: `YelpCamp/${sampel(images)}`
                 }
             ]
         });
