@@ -48,10 +48,30 @@
             </ul>
             <% if (currentUser && campground.author.equals(currentUser._id)) { %>
               <div class="card-body">
-                <form class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
-                  <button class="btn btn-danger">Delete</button>
-                </form>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#campgroundDeleteModal">
+                  Delete
+                </button>
               </div>
+              <!-- Modal: -->
+              <div class="modal fade" id="campgroundDeleteModal" tabindex="-1" aria-labelledby="campgroundDeleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="campgroundDeleteModalLabel">Delete Confirmation</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Are you sure you want to delete this campground?
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <form class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div> 
             <% } %>
         </div>
     </div>
@@ -98,12 +118,32 @@
               <h5 class="card-title"><%= review.author.username %></h5>
               <p class="card-text"><%= review.body %></p>
               <% if (currentUser && review.author.equals(currentUser._id)) { %>
-                <form class="d-inline" action="/campgrounds/<%= campground._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-                  <button class="btn btn-danger">Delete</button>
-                </form>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#reviewDeleteModal">
+                  Delete
+                </button>
               <% } %>
             </div>
           </div>
+          <!-- Modal: -->
+          <div class="modal fade" id="reviewDeleteModal" tabindex="-1" aria-labelledby="reviewDeleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="reviewDeleteModalLabel">Delete Confirmation</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Are you sure you want to delete this review?
+                </div>
+                <div class="modal-footer justify-content-between">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <form class="d-inline" action="/campgrounds/<%= campground._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>  
         <% } %>
     </div>
     
