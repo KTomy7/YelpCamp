@@ -2,26 +2,23 @@
 <h1 class="title text-center mt-5">All Campgrounds</h1>
 <div class="row mt-5">
 <% for(let campground of campgrounds) { %>
-<div class="col-md-6 col-lg-4">
-    <div class="card mb-3">
-        <img src="<%= campground.images[0].medium %>" class="img-fluid card-img-top" alt="">
-    <div class="col-md-10">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-11">
-                        <h5 class="card-title"><%= campground.title %></h5>
+    <div class="col-md-6 col-lg-4">
+        <div class="card mb-3">
+            <img src="<%= campground.images[0].medium %>" class="img-fluid card-img-top" alt="">
+        <div class="col-md-10">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-11">
+                            <h5 class="card-title"><%= campground.title %></h5>
+                        </div>
+                        <div class="col-1">
+                            <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">View</a>
+                        </div>
                     </div>
-                    <div class="col-1">
-                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">View</a>
-                    </div>
-
+                    <h6 class="card-subtitle mb-2 text-muted"><%= campground.location %></h6>
                 </div>
-                
-                <h6 class="card-subtitle mb-2 text-muted"><%= campground.location %></h6>
-                
             </div>
         </div>
     </div>
-</div>
 <% } %>
 </div>
