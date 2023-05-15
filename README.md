@@ -9,6 +9,20 @@ This project was created using Node.js, Express, Bootstrap and MongoDb. Passport
 - Users can create, edit and delete campgrounds.
 - Users can review campgrounds, also edit or remove their reviews.
 
+## Getting Started
+1. Clone the repository.
+```
+$ git clone https://github.com/KTomy7/YelpCamp.git
+```
+2. Install dependencies via NPM.
+```
+$ npm install
+```
+3. Run the server and open a browser to visit http://localhost:3000/.
+```
+$ npm run dev
+```
+
 ## Preview
 ![home_page](https://user-images.githubusercontent.com/101259596/185745814-7de4ecf1-df0e-4ae3-a16d-54a2b4e1af92.png)
 
