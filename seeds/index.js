@@ -4,7 +4,7 @@ const { places, descriptors } = require('./seedHelpers');
 const images = require('./images');
 const Campground = require('../models/campground');
 
-mongoose.connect('mongodb://localhost:27017/yelp_camp');
+mongoose.connect('mongodb://127.0.0.1/yelp_camp');
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
@@ -23,7 +23,7 @@ const seedDB = async () => {
             title: `${sampel(descriptors)} ${sampel(places)}`,
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-            author: '62ea7219539c4300fcf905de',
+            author: '646210de53bf211de53a5032',
             price: Math.floor(Math.random() * 20) + 10,
             images: [
                 {
